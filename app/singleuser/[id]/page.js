@@ -54,7 +54,7 @@ const SingleUser = () => {
     if (!data) return <p>No Data Found.</p>;
 
     return (
-        <div className='px-4 card mx-3 mt-2 rounded-xl mb-4 h-[120vh] sm:h-[100vh] border border-black'>
+        <div className='px-4 card mx-3 mt-2 rounded-xl mb-4 h-[120vh] sm:h-[135vh] lg:h-[100vh] border border-black'>
              <div className="relative pt-[4rem] sm:pt-0">
 
              <Link href={'/'}><img src="/back.png" alt="" className="absolute top-[70px] sm:top-2 left-7 bg-white rounded-full object-contain border border-black  w-10 h-10"  /></Link><h2 className='text-center  font-bold text-2xl text-yellow-300 py-2 px-4'>User Profile</h2>
