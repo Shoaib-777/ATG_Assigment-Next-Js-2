@@ -8,7 +8,7 @@ const Userscards = async() => {
 
   if (isLoading) {return(
     <div className="card px-3 py-2 w-[300px] h-[330px] rounded-xl mx-auto mt-3 bg-gray-200 animate-pulse">
-        <div className="flex flex-col px-1 py-2 gap-4 justify-center items-center">
+        <div className="flex flex- px-1 py-2 gap-4 justify-center items-center">
             <div className="rounded-full w-[84px] h-[84px] bg-gray-300"></div>
             <div className="w-full text-center text-white flex flex-col gap-3">
                 <div className="bg-gray-300 h-6 w-3/4 mx-auto rounded"></div>
@@ -24,20 +24,20 @@ const Userscards = async() => {
   return (
     <>
     { Data.map((v,i)=>{return(
-    <div key={i} className=" card px-3 py-2 w-[300px] h-[330px] rounded-xl mx-auto mt-3">
-        <div className="flex flex-col px-1 py-2 gap-4 justify-center items-center">
-            <div className=" rounded-full w-[84px] h-[84px]">
+    <div key={i} className=" card px-2 py-2 w-[420px] h-[200px] rounded-xl mx-auto mt-3">
+        <div className="flex  px-1 py-2 gap-4 justify-center items-center">
+            <div className=" rounded-full w-[84px] h-[84px] ">
                 <img src={v.avatar} alt="" className="w-20 h-20 rounded-full object-contain" />
             </div>
-            <div className=" w-full text-center text-white flex flex-col gap-3">
-                <h2 className="font-bold text-2xl "><span>{v.profile.firstName} </span><span> {v.profile.lastName}</span></h2>
+            <div className=" w-2/3 text-center text-white flex flex-col gap-1">
+                <h2 className="font-bold text-xl "><span>{v.profile.firstName} </span><span> {v.profile.lastName}</span></h2>
                 <h5 className="text-md font-semibold text-nowrap">{v.jobTitle}</h5>
                 <div className=" text-nowrap tracking-tighter">
-                <label className="">Email Id : </label><span>{v.profile.email}</span>
+                <label className="block">Email Id : </label><span >{v.profile.email}</span>
                 </div>
             </div>
         </div>
-        <div className=" justify-center flex  mt-[3rem]">
+        <div className=" justify-center flex  mt-[1rem]">
                 <Link href={`/singleuser/${v.id}`}><button className="bg-green-600 hover:bg-green-800 px-5 py-2 rounded-lg font-bold text-white">View Profile</button></Link>
         </div>
     </div>
