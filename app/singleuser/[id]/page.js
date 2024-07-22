@@ -54,13 +54,20 @@ const SingleUser = () => {
     if (!data) return <p>No Data Found.</p>;
 
     return (
-        <div className='px-4 card mx-4 mt-2 rounded-xl relative mb-4'>
-             <Link href={'/'}><img src="/back.png" alt="" className="absolute top-2 left-7 bg-white rounded-full object-contain border border-black w-10 h-10"  /></Link><h2 className='text-center font-bold text-2xl text-yellow-300 py-2 px-4'>User Profile</h2>
-            <div className='flex flex-col md:flex-row py-2 gap-1'>
+        <div className='px-4 card mx-3 mt-2 rounded-xl mb-4 h-[120vh] sm:h-[100vh] border border-black'>
+             <div className="relative pt-[4rem] sm:pt-0">
+
+             <Link href={'/'}><img src="/back.png" alt="" className="absolute top-[70px] sm:top-2 left-7 bg-white rounded-full object-contain border border-black  w-10 h-10"  /></Link><h2 className='text-center  font-bold text-2xl text-yellow-300 py-2 px-4'>User Profile</h2>
+             </div>
+
+            <div className='flex  py-2 gap-1 mt-[8rem] sm:mt-[2rem]'>
                 <div className='border border-white rounded-l-xl px-2 md:px-4 flex flex-col gap-2 md:gap-4 md:pb-6'>
-                    <img src={data.avatar} alt="" className='w-[300px] h-[400px] object-contain mx-auto' />
+                    <img src={data.avatar} alt="" className=' w-[300px] h-[400px] object-contain mx-auto' />
+                </div>
+                <div className='border-2 border-black rounded-r-xl flex flex-col justify-between w-full min-h-[500px] md:min-h-max px-4 md:px-8'>
                     <span className='font-bold text-xl md:text-2xl text-yellow-400'>
                         <h2>
+                            <span className="block text-black">Name: </span>
                             <span>{data.profile.firstName} </span>
                             <span>{data.profile.lastName}</span>
                         </h2>
@@ -68,19 +75,15 @@ const SingleUser = () => {
                     <h4 className='font-semibold text-[18px] md:text-xl'>
                         <label className='text-white'>User Name: </label>{data.profile.username}
                     </h4>
-                    <h4 className='font-semibold text-[18px] md:text-xl text-nowrap mb-2'>
-                        <label className='text-white'>Email Id: </label>{data.profile.email}
+                    <h4 className='font-semibold text-[18px] md:text-xl text-nowrap tracking-tighter mb-2'>
+                        <label className='text-white block md:inline'>Email Id: </label><span className="text-[15px] md:text-xl">{data.profile.email}</span>
                     </h4>
-                </div>
-                <div className='border-2 border-black rounded-r-xl flex flex-col justify-between w-full min-h-[500px] md:min-h-max px-4 md:px-8'>
-                    <h2 className='font-bold text-center mt-[3rem] text-2xl text-yellow-400'>
+                    <h2 className='font-bold  mt-[1rem] text-2xl text-yellow-400'>
                         <span className='text-black'>Job Title : </span>{data.jobTitle}
                     </h2>
                     <div>
-                        <details className='w-full h-fit cursor-pointer'>
-                            <summary className='font-bold text-xl'>Description / Bio </summary>
-                            <p className='font-medium italic text-white'>{data.Bio}</p>
-                        </details>
+                            <h2 className='font-bold text-xl'>Description / Bio: </h2>
+                            <p className='font-medium italic tracking-tighter text-white'>{data.Bio}</p>
                     </div>
                     <div className='mb-8'>
                         <h5 className='text-black text-xl font-bold'>
